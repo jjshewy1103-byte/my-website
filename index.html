@@ -3,196 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Professional Portfolio</title>
+    <title>Cup'a Cup'a Cafe | Washington DC</title>
     <style>
-        /* Modern CSS Reset & Variables */
+        /* Clean & Cozy Theme Variables */
         :root {
-            --primary: #2563eb;
-            --dark: #1e293b;
-            --light: #f8fafc;
-            --text: #334155;
+            --bg-cozy: #faf7f2;
+            --primary-coffee: #6f4e37;
+            --primary-light: #b08968;
+            --dark-text: #2c2520;
             --white: #ffffff;
+            --accent-green: #e2ece9;
+            --accent-text: #3d5a50;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif;
         }
 
         body {
-            background-color: var(--light);
-            color: var(--text);
-            line-height: 1.6;
+            background-color: var(--bg-cozy);
+            color: var(--dark-text);
+            line-height: 1.7;
         }
 
         /* Navigation */
         nav {
             background-color: var(--white);
-            padding: 1.25rem 5%;
+            padding: 1.5rem 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 2px 10px rgba(111, 78, 55, 0.05);
             position: sticky;
             top: 0;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
             z-index: 100;
         }
 
-        nav .logo {
+        .logo {
             font-weight: 700;
-            font-size: 1.5rem;
-            color: var(--dark);
+            font-size: 1.4rem;
+            color: var(--primary-coffee);
+            letter-spacing: -0.5px;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         nav a {
             text-decoration: none;
-            color: var(--text);
+            color: var(--dark-text);
             font-weight: 500;
             transition: color 0.2s;
+            font-size: 0.95rem;
         }
 
         nav a:hover {
-            color: var(--primary);
+            color: var(--primary-coffee);
         }
 
         /* Hero Section */
         header {
-            padding: 8rem 5% 6rem 5%;
+            padding: 7rem 8% 6rem 8%;
             text-align: center;
-            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            background-color: #f3ece3;
+            border-bottom: 1px solid #eadecc;
+        }
+
+        .rating-badge {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--white);
+            padding: 0.4rem 1rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--primary-coffee);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
         }
 
         header h1 {
-            font-size: 3rem;
-            color: var(--dark);
-            margin-bottom: 1.5rem;
+            font-size: 3.5rem;
+            color: var(--primary-coffee);
+            margin-bottom: 1rem;
             font-weight: 800;
         }
 
-        header p {
-            font-size: 1.25rem;
-            max-width: 600px;
+        header .tagline {
+            font-size: 1.3rem;
+            max-width: 650px;
             margin: 0 auto 2rem auto;
+            color: var(--dark-text);
+            font-weight: 400;
         }
 
-        .btn {
-            display: inline-block;
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 0.75rem 2rem;
-            border-radius: 0.375rem;
-            text-decoration: none;
+        .features-pill-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .pill {
+            background-color: var(--accent-green);
+            color: var(--accent-text);
+            padding: 0.3rem 1.2rem;
+            border-radius: 10rem;
+            font-size: 0.85rem;
             font-weight: 600;
-            transition: opacity 0.2s;
         }
 
-        .btn:hover {
-            opacity: 0.9;
+        .pill.no {
+            background-color: #fde8e8;
+            color: #9b1c1c;
         }
 
-        /* Services Grid */
-        .section {
-            padding: 5rem 5%;
+        /* Information Grid */
+        .info-section {
+            padding: 5rem 8%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .info-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 15px rgba(111, 78, 55, 0.03);
+            border: 1px solid #eeebe5;
+        }
+
+        .info-card h2 {
+            color: var(--primary-coffee);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--bg-cozy);
+            padding-bottom: 0.5rem;
+        }
+
+        .info-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .info-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary-light);
+            font-weight: 700;
+        }
+
+        .info-value {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            background-color: var(--white);
+            padding: 5rem 8%;
+            border-top: 1px solid #eeebe5;
+        }
+
+        .center-title {
+            text-align: center;
+            color: var(--primary-coffee);
+            margin-bottom: 3rem;
+            font-size: 2rem;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            color: var(--dark);
-            margin-bottom: 3rem;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background-color: var(--white);
-            padding: 2.5rem;
+        .review-card {
+            background-color: var(--bg-cozy);
+            padding: 2rem;
             border-radius: 0.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--primary-light);
         }
 
-        .card h3 {
-            color: var(--dark);
-            margin-bottom: 1rem;
-        }
-
-        /* About Section */
-        #about {
-            background-color: var(--white);
-        }
-
-        /* Contact Form configured for Netlify Forms */
-        form {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: var(--white);
-            padding: 2.5rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        label {
-            display: block;
+        .review-stars {
+            color: #d4af37;
             margin-bottom: 0.5rem;
-            font-weight: 500;
+            font-size: 1.1rem;
         }
 
-        input, textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #cbd5e1;
-            border-radius: 0.375rem;
+        .review-text {
+            font-style: italic;
+            margin-bottom: 1rem;
             font-size: 1rem;
         }
 
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
-        button {
-            width: 100%;
-            background-color: var(--primary);
-            color: var(--white);
-            border: none;
-            padding: 1rem;
-            border-radius: 0.375rem;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
+        .review-author {
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--primary-coffee);
         }
 
         /* Footer */
         footer {
-            background-color: var(--dark);
-            color: #94a3b8;
+            background-color: var(--primary-coffee);
+            color: var(--bg-cozy);
             text-align: center;
-            padding: 2rem;
-            font-size: 0.875rem;
+            padding: 3rem 8%;
+            font-size: 0.9rem;
         }
 
-        /* Responsive Design */
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* Mobile adjustments */
         @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
             nav ul { display: none; }
-            header h1 { font-size: 2.25rem; }
         }
     </style>
 </head>
@@ -200,75 +238,92 @@
 
     <!-- Navigation Bar -->
     <nav>
-        <div class="logo">MyBrand</div>
+        <div class="logo">Cup'a Cup'a Cafe</div>
         <ul>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#info">Location & Hours</a></li>
+            <li><a href="#reviews">Guest Reviews</a></li>
         </ul>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Header / Hero Section -->
     <header>
-        <h1>Modern Solutions For Your Business</h1>
-        <p>I build elegant, responsive, and completely custom web solutions tailored to meet your target audience needs perfectly.</p>
-        <a href="#contact" class="btn">Get In Touch</a>
+        <div class="rating-badge">★ 4.6 (50 Reviews) · Coffee Shop</div>
+        <h1>Cup'a Cup'a Cafe</h1>
+        <p class="tagline">A cozy, welcoming cafe and bookstore offering fresh premium coffee, delicious pastries, and comforting authentic Ethiopian dishes.</p>
+        
+        <div class="features-pill-container">
+            <span class="pill">✓ Dine-in</span>
+            <span class="pill">✓ Takeout</span>
+            <span class="pill no">✗ No Delivery</span>
+        </div>
     </header>
 
-    <!-- Services Section -->
-    <section id="services" class="section">
-        <h2 class="section-title">What I Offer</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Web Design</h3>
-                <p>Visually stunning layouts optimized across all modern mobile and desktop viewport profiles.</p>
+    <!-- Details Section -->
+    <section class="info-section" id="info">
+        <!-- Location details box -->
+        <div class="info-card">
+            <h2>Find Us</h2>
+            <div class="info-item">
+                <div class="info-label">Address</div>
+                <div class="info-value">1900 G St NW, Washington, DC 20006</div>
             </div>
-            <div class="card">
-                <h3>Development</h3>
-                <p>Clean, semantic, error-free markup optimized directly for speed and search engines.</p>
+            <div class="info-item">
+                <div class="info-label">Neighborhood Link</div>
+                <div class="info-value">Located in The George Washington University Campus</div>
             </div>
-            <div class="card">
-                <h3>Consulting</h3>
-                <p>Expert analytical audits designed to fix bottleneck drops and elevate conversion tracking metrics.</p>
+            <div class="info-item">
+                <div class="info-label">Phone Contact</div>
+                <div class="info-value">(202) 466-2872</div>
+            </div>
+        </div>
+
+        <!-- Hours & Budget box -->
+        <div class="info-card">
+            <h2>Cafe Details</h2>
+            <div class="info-item">
+                <div class="info-label">Operating Schedule</div>
+                <div class="info-value">Opens at 8:00 AM on Monday</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Price Range Guide</div>
+                <div class="info-value">$1–10 per person (Affordable & Casual)</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Atmosphere Highlights</div>
+                <div class="info-value">Outdoor patio tables, interior community bookshelves, welcoming staff</div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="section" style="background-color: var(--white); max-width: 100%;">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <h2 class="section-title">About Me</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1rem;">
-                I am an independent creator focused on engineering lightweight digital assets. By avoiding clunky third-party website builders, my sites remain completely watermark-free, highly performant, and completely free to host.
-            </p>
+    <!-- Reviews / Feedback Grid Section -->
+    <section class="reviews-section" id="reviews">
+        <h2 class="center-title">Community Voice</h2>
+        <div class="reviews-grid">
+            
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <div class="review-text">"Absolute gem of a cafe and bookstore. Far exceeds any other cheap casual options in an area plagued by slop bowls. Very friendly staff as well."</div>
+                <div class="review-author">— J W (Local Guide)</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <div class="review-text">"Absolutely love Cup’a Cup’a Cafe! Their authentic Ethiopian food is incredibly flavorful and comforting! Highly recommend! Sofia is very kind!"</div>
+                <div class="review-author">— Mauricio Correia de Mello</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <div class="review-text">"Great little coffee shop near GW Campus. Very affordable and the owner is so nice and friendly. Good seating outside and the neighboring bookstore is cool too."</div>
+                <div class="review-author">— Kenan Kabbani</div>
+            </div>
+
         </div>
     </section>
 
-    <!-- Contact Form with Native Netlify Forms Integration -->
-    <section id="contact" class="section">
-        <h2 class="section-title">Contact Me</h2>
-        
-        <!-- The data-netlify="true" attribute tells Netlify to automatically process submissions -->
-        <form name="contact-form" method="POST" data-netlify="true">
-            <div class="form-group">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
-
-    <!-- Footer -->
+    <!-- Footer block -->
     <footer>
-        <p>&copy; 2026 MyBrand. Built with raw code — No watermarks.</p>
+        <p>&copy; 2026 Cup'a Cup'a Cafe. Built Beautifully on GitHub Pages.</p>
     </footer>
 
 </body>
